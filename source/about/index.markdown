@@ -13,4 +13,4 @@ jsjsjs (exclam. used to represent sly laughter), is a place to post rants and la
 
 What is devX
 ------------------
-Is given name to the developer who wrote the wft.
+Is a given name to the developer who wrote the wft.

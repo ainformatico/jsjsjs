@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: selector | jsjsjs]]></title>
+  <link href="http://ainformatico.github.com/jsjsjs/blog/categories/selector/atom.xml" rel="self"/>
+  <link href="http://ainformatico.github.com/jsjsjs/"/>
+  <updated>2012-11-15T21:31:16+01:00</updated>
+  <id>http://ainformatico.github.com/jsjsjs/</id>
+  <author>
+    <name><![CDATA[Alejandro El Informático]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The omni selector]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector/"/>
+    <updated>2012-02-22T16:32:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector</id>
+    <content type="html"><![CDATA[<p>devX: Why to use <em>jquery</em> if you can do it with browser <em>API</em>. Oh, wait! <em>jquery</em> can do it too?. So let's use both! Why not?</p>
+
+<p><code>javascript
+var myurl = document.getElementById("captureUrl").value;
+//5 lines below
+var data = $("#captureUrl").val();
+</code></p>
+
+<!-- more -->
+
+
+<h2>What's wrong here</h2>
+
+<ul>
+<li>Use two different ways to get the same data</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the same selector</li>
+</ul>
+
+
+<p><code>javascript
+var myurl = data = $("#captureUrl").val();
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

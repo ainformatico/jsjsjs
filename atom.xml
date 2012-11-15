@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[jsjsjs]]></title>
+  <link href="http://ainformatico.github.com/jsjsjs/atom.xml" rel="self"/>
+  <link href="http://ainformatico.github.com/jsjsjs/"/>
+  <updated>2012-11-15T21:31:16+01:00</updated>
+  <id>http://ainformatico.github.com/jsjsjs/</id>
+  <author>
+    <name><![CDATA[Alejandro El Informático]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chaining like a boss]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/03/01/chaining-like-a-boss/"/>
+    <updated>2012-03-01T16:00:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/03/01/chaining-like-a-boss</id>
+    <content type="html"><![CDATA[<p><em>jquery</em> chaining like a boss.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;ui-draggable-disabled&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;ui-state-disabled&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;ui-draggable&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">draggable</span><span class="p">(</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">containment</span><span class="o">:</span> <span class="s2">&quot;#canvas&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">start</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
+</span><span class='line'>  <span class="nx">stop</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">cursor</span><span class="o">:</span> <span class="s1">&#39;move&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">border</span><span class="o">:</span> <span class="s1">&#39;1px solid white&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">background</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">opacity</span><span class="o">:</span> <span class="p">.</span><span class="mi">30</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>not using the <em>jquery</em> chaining</li>
+<li>bad use of <code>removeClass()</code></li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the <em>jquery</em> chaining</li>
+<li>use <code>removeClass()</code> correctly</li>
+<li>cache the selector, <em>optional</em></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">actual</span>  <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+</span><span class='line'>    <span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.area&#39;</span> <span class="o">+</span> <span class="nx">actual</span><span class="p">);</span>
+</span><span class='line'><span class="nx">element</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;ui-draggable-disabled ui-state-disabled ui-draggable&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">draggable</span><span class="p">(</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="nx">containment</span> <span class="o">:</span> <span class="s2">&quot;#canvas&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">start</span>       <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
+</span><span class='line'>    <span class="nx">stop</span>        <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
+</span><span class='line'>  <span class="p">})</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">css</span><span class="p">(</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="nx">cursor</span>     <span class="o">:</span> <span class="s1">&#39;move&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">border</span>     <span class="o">:</span> <span class="s1">&#39;1px solid white&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">background</span> <span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">opacity</span>    <span class="o">:</span> <span class="p">.</span><span class="mi">30</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[document oninterval]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/24/document-oninterval/"/>
+    <updated>2012-02-24T16:44:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/24/document-oninterval</id>
+    <content type="html"><![CDATA[<p>This is not as old as it seems.</p>
+
+<p>Check if the <em>dom</em> is fully loaded.</p>
+
+<figure class='code'><figcaption><span>From init.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">init</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">init</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//actions</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>Use an interval tho check if the <em>dom</em> is fully loaded</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the <code>onload</code> method from the <code>window</code> <em>object</em></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//actions</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Replace by brute force]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/22/replace-by-brute-force/"/>
+    <updated>2012-02-22T17:22:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/22/replace-by-brute-force</id>
+    <content type="html"><![CDATA[<p>Replace all the matches!!!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>use a loop to replace all the matches</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the <code>g</code> flag provided by the <em>regex</em> engine</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The omni selector]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector/"/>
+    <updated>2012-02-22T16:32:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector</id>
+    <content type="html"><![CDATA[<p>devX: Why to use <em>jquery</em> if you can do it with browser <em>API</em>. Oh, wait! <em>jquery</em> can do it too?. So let&#8217;s use both! Why not?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">myurl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;captureUrl&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//5 lines below</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#captureUrl&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>Use two different ways to get the same data</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the same selector</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">myurl</span> <span class="o">=</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#captureUrl&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make sure it is sortable]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/21/make-sure-it-is-sortable/"/>
+    <updated>2012-02-21T19:13:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/21/make-sure-it-is-sortable</id>
+    <content type="html"><![CDATA[<p>devX: Make it sortable!!!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//$(&quot;#demo&quot;) is the same as $(this).next()</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">sortable</span><span class="p">(</span><span class="s1">&#39;enable&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="s1">&#39;fast&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">).</span><span class="nx">sortable</span><span class="p">(</span><span class="s1">&#39;enable&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>set <code>$('#demo')</code> as <code>sortable</code> twice</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>remove the first <code>sortable</code> statement</li>
+<li>cache <code>$("#demo")</code> into a variable</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">item</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="s1">&#39;fast&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">item</span><span class="p">.</span><span class="nx">sortable</span><span class="p">(</span><span class="s1">&#39;enable&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[the JSON creation]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/20/the-json-creation/"/>
+    <updated>2012-02-20T23:19:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/20/the-json-creation</id>
+    <content type="html"><![CDATA[<p>devX wrote this to create a JSON:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">tmpJSON</span> <span class="o">=</span> <span class="s1">&#39;{&quot;fileDate&quot; : &quot;, &quot;fileSize&quot; : 0,&quot;fileUrl&quot; : &quot;&#39;</span> <span class="o">+</span> <span class="nx">jsonx</span><span class="p">.</span><span class="nx">file</span> <span class="o">+</span> <span class="s1">&#39;&quot;}&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">LIB</span><span class="p">.</span><span class="nx">imager</span><span class="p">.</span><span class="nx">mycallbackData</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">tmpJSON</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
+
+
+<h2>What&#8217;s wrong here</h2>
+
+<ul>
+<li>use <em>jquery</em> to create a <em>JSON</em></li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>create a <em>javascript</em> object</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">LIB</span><span class="p">.</span><span class="nx">imager</span><span class="p">.</span><span class="nx">mycallbackData</span> <span class="o">=</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">fileDate</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">fileSize</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">fileUrl</span>  <span class="o">:</span> <span class="nx">jsonx</span><span class="p">.</span><span class="nx">file</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>

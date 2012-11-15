@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jquery | jsjsjs]]></title>
+  <link href="http://ainformatico.github.com/jsjsjs/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://ainformatico.github.com/jsjsjs/"/>
+  <updated>2012-11-15T21:31:16+01:00</updated>
+  <id>http://ainformatico.github.com/jsjsjs/</id>
+  <author>
+    <name><![CDATA[Alejandro El Informático]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chaining like a boss]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/03/01/chaining-like-a-boss/"/>
+    <updated>2012-03-01T16:00:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/03/01/chaining-like-a-boss</id>
+    <content type="html"><![CDATA[<p><em>jquery</em> chaining like a boss.</p>
+
+<p><code>javascript
+var actual = $(element).val();
+$('.area' + actual + '').removeClass('ui-draggable-disabled');
+$('.area' + actual + '').removeClass('ui-state-disabled');
+$('.area' + actual + '').removeClass('ui-draggable');
+$('.area' + actual + '').draggable(
+{
+  containment: "#canvas",
+  start: function () {},
+  stop: function () {}
+});
+$('.area' + actual + '').css(
+{
+  cursor: 'move',
+  border: '1px solid white',
+  background: 'red',
+  opacity: .30
+});
+</code></p>
+
+<!-- more -->
+
+
+<h2>What's wrong here</h2>
+
+<ul>
+<li>not using the <em>jquery</em> chaining</li>
+<li>bad use of <code>removeClass()</code></li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the <em>jquery</em> chaining</li>
+<li>use <code>removeClass()</code> correctly</li>
+<li>cache the selector, <em>optional</em></li>
+</ul>
+
+
+<p>``` javascript
+var actual  = $(element).val(),</p>
+
+<pre><code>element = $('.area' + actual);
+</code></pre>
+
+<p>element
+  .removeClass('ui-draggable-disabled ui-state-disabled ui-draggable')
+  .draggable(
+  {</p>
+
+<pre><code>containment : "#canvas",
+start       : function () {},
+stop        : function () {}
+</code></pre>
+
+<p>  })
+  .css(
+  {</p>
+
+<pre><code>cursor     : 'move',
+border     : '1px solid white',
+background : 'red',
+opacity    : .30
+</code></pre>
+
+<p>  });
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The omni selector]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector/"/>
+    <updated>2012-02-22T16:32:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/22/the-omni-selector</id>
+    <content type="html"><![CDATA[<p>devX: Why to use <em>jquery</em> if you can do it with browser <em>API</em>. Oh, wait! <em>jquery</em> can do it too?. So let's use both! Why not?</p>
+
+<p><code>javascript
+var myurl = document.getElementById("captureUrl").value;
+//5 lines below
+var data = $("#captureUrl").val();
+</code></p>
+
+<!-- more -->
+
+
+<h2>What's wrong here</h2>
+
+<ul>
+<li>Use two different ways to get the same data</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>use the same selector</li>
+</ul>
+
+
+<p><code>javascript
+var myurl = data = $("#captureUrl").val();
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: json | jsjsjs]]></title>
+  <link href="http://ainformatico.github.com/jsjsjs/blog/categories/json/atom.xml" rel="self"/>
+  <link href="http://ainformatico.github.com/jsjsjs/"/>
+  <updated>2012-11-15T21:31:16+01:00</updated>
+  <id>http://ainformatico.github.com/jsjsjs/</id>
+  <author>
+    <name><![CDATA[Alejandro El Informático]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[the JSON creation]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/20/the-json-creation/"/>
+    <updated>2012-02-20T23:19:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/20/the-json-creation</id>
+    <content type="html"><![CDATA[<p>devX wrote this to create a JSON:</p>
+
+<p><code>javascript
+var tmpJSON = '{"fileDate" : ", "fileSize" : 0,"fileUrl" : "' + jsonx.file + '"}';
+LIB.imager.mycallbackData = jQuery.parseJSON(tmpJSON);
+</code></p>
+
+<!-- more -->
+
+
+<h2>What's wrong here</h2>
+
+<ul>
+<li>use <em>jquery</em> to create a <em>JSON</em></li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>create a <em>javascript</em> object</li>
+</ul>
+
+
+<p><code>javascript
+LIB.imager.mycallbackData =
+{
+  fileDate : '',
+  fileSize : 0,
+  fileUrl  : jsonx.file
+};
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

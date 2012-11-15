@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jqueryui | jsjsjs]]></title>
+  <link href="http://ainformatico.github.com/jsjsjs/blog/categories/jqueryui/atom.xml" rel="self"/>
+  <link href="http://ainformatico.github.com/jsjsjs/"/>
+  <updated>2012-11-15T21:31:16+01:00</updated>
+  <id>http://ainformatico.github.com/jsjsjs/</id>
+  <author>
+    <name><![CDATA[Alejandro El Informático]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Make sure it is sortable]]></title>
+    <link href="http://ainformatico.github.com/jsjsjs/blog/2012/02/21/make-sure-it-is-sortable/"/>
+    <updated>2012-02-21T19:13:00+01:00</updated>
+    <id>http://ainformatico.github.com/jsjsjs/blog/2012/02/21/make-sure-it-is-sortable</id>
+    <content type="html"><![CDATA[<p>devX: Make it sortable!!!</p>
+
+<p>``` javascript
+//$("#demo") is the same as $(this).next()
+$(this).next().sortable('enable');
+$(this).next().fadeIn('fast', function (e) {</p>
+
+<pre><code>$("#demo").sortable('enable');
+</code></pre>
+
+<p>});
+```</p>
+
+<!-- more -->
+
+
+<h2>What's wrong here</h2>
+
+<ul>
+<li>set <code>$('#demo')</code> as <code>sortable</code> twice</li>
+</ul>
+
+
+<h2>How to conquer</h2>
+
+<ul>
+<li>remove the first <code>sortable</code> statement</li>
+<li>cache <code>$("#demo")</code> into a variable</li>
+</ul>
+
+
+<p><code>javascript
+var item = $("#demo");
+item.fadeIn('fast', function()
+{
+  item.sortable('enable');
+});
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
